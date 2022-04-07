@@ -4,4 +4,4 @@ This repository contains a R script that can be used to screen the upstream flan
 
 # HOW TO USE
 
-Enter the user inputs described as comments in teh script and then run the script. Results will be automatically saved to the current working directory.
+Enter the user inputs described as comments in the script and then run the script. Results will be automatically saved to the current working directory.
