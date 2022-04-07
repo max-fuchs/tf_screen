@@ -1,4 +1,7 @@
-#fetching matrix data from JASPAR
+list.of.packages <- c("JASPAR2018","TFBSTools","Biostrings","stringr","dplyr","biomaRt","seqinr")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
 library(JASPAR2018)
 library(TFBSTools)
 library(Biostrings)
@@ -6,6 +9,7 @@ library(stringr)
 library(dplyr)
 library(biomaRt)
 library(seqinr)
+
 
 
 
@@ -99,8 +103,8 @@ GFF_upseq <- writeGFF3(siteset_up)
 GFF_downseq <- writeGFF3(siteset_down)
 
 #calculate pvalues
-#pvals_up <- pvalues(EN1ko_siteset_up, type = "sampling")
-#pvals_down <- pvalues(EN1ko_siteset_down, type = "sampling")
+pvals_up <- pvalues(siteset_up, type = "sampling")
+pvals_down <- pvalues(siteset_down, type = "sampling")
 
 #split GFF
 names_upseq <- row.names(GFF_upseq)
